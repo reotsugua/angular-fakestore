@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-
+import { StarComponent } from './star.component';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+    declarations: [
+        StarComponent
+    ],
+    exports: [
+        StarComponent
+    ]
 })
-export class StarModule { }
+export class StarModule {
+
+}
