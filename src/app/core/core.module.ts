@@ -1,15 +1,20 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { NavBarComponent } from './component/nav-bar/nav-bar.component';
-
-
+import { RouterModule } from '@angular/router';
+import { Error404Component } from './component/error-404/error404.component';
 
 @NgModule({
-  declarations: [
-    NavBarComponent
-  ],
-  imports: [
-    CommonModule
-  ]
+    declarations: [
+        NavBarComponent,
+        Error404Component
+    ],
+    imports: [
+        RouterModule
+    ],
+    exports: [
+        NavBarComponent
+    ]
 })
-export class CoreModule { }
+export class CoreModule { 
+
+}
