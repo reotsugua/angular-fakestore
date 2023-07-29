@@ -8,12 +8,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ProdutoModule } from './produtos/produto.module';
 import { CoreModule } from './core/core.module';
-import { Error404Compoennt } from './core/component/error-404/error-404.component';
+import { Error404Component } from './core/component/error-404/error-404.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    Error404Compoennt
+    Error404Component
   ],
   imports: [
     BrowserModule,
@@ -23,7 +23,7 @@ import { Error404Compoennt } from './core/component/error-404/error-404.componen
         path: '', redirectTo: 'produtos', pathMatch: 'full'
       }, 
       {
-        path: '**', component: Error404Compoennt
+        path: '**', component: Error404Component
       }
     ]),
     ProdutoModule,
