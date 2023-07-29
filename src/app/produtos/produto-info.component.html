@@ -1,1 +1,23 @@
-<p>produto-info works!</p>
+<h6>Informações do Produto</h6>
+
+<hr/>
+
+<div >
+    <h2 class="product-title my-4">{{ produto.title }}</h2>
+    <div class="product-info d-flex flex-wrap">
+        <div class="product-image mx-5">
+            <img [src]="produto.image" alt="Produto Image" class="w-100" style="max-width: 20rem; height: 15em; object-fit: contain;">
+        </div>
+        <div class="product-details w-50  mx-5">
+            <app-star [rating]="produto.rating.rate"></app-star>
+            <div class="product-meta row justify-content-between p-3">
+                <h4>R$ {{ produto.price }}</h4>  
+                <button [routerLink]="['/produtos']" class="btn btn-primary">CONTINUAR COMPRANDO</button>
+                
+            </div>
+            <h5>Descrição: </h5>
+            <p class="product-description">{{ produto.description }}</p>
+        </div>
+    </div>
+</div>
+

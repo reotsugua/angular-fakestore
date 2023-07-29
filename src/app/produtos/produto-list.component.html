@@ -1,1 +1,27 @@
-<p>produtolist works!</p>
+<h2>Lista de Produtos</h2>
+
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label">Pesquisar por nome:</label>
+  <div class="col-sm-10">
+    <input [(ngModel)]='filter' class="form-control" placeholder="Insira o nome do curso">
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-lg-3 col-md-6 mb-4" *ngFor="let produto of filteredProdutos">
+    <div class="card">
+      <img class="card-img-top square-image" [src]="produto.image" alt="Movie Image" style="height: 15em; object-fit: contain;">
+      <div class="card-body">
+        <h5 class="card-title" style="display:-webkit-box;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;-webkit-line-clamp: 1;line-clamp: 1;">
+          {{produto.title | uppercase}}</h5>
+          <app-star [rating]="produto.rating.rate"></app-star>
+        <div class="d-flex justify-content-between">
+          <h4>R${{ produto.price }}</h4>
+          <a [routerLink]="['/produtos/info', produto.id]" class="btn btn-outline-primary mr-2">DETALHES</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
