@@ -29,15 +29,7 @@ export class ProdutoListComponent implements OnInit {
         })
     }
 
-    deleteById(produtoId: number): void { 
-        this.produtoService.deleteById(produtoId).subscribe({
-            next: () => { 
-                console.log('Deleted with success');
-                this.retrieveAll();
-            },
-            error: err => console.log('Error', err)
-        })
-    }
+    
 
     set filter(value: string) { 
         this._filterBy = value;

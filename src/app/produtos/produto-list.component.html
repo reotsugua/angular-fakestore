@@ -1,9 +1,9 @@
 <h2>Lista de Produtos</h2>
 
 <div class="form-group row">
-  <label class="col-sm-2 col-form-label">Pesquisar por nome:</label>
+  <label class="col-sm-2 col-form-label">Pesquisar:</label>
   <div class="col-sm-10">
-    <!-- <input [(ngModel)]='filter' class="form-control" placeholder="Insira o nome do curso"> -->
+    <input [(ngModel)]='filter' class="form-control" placeholder="Insira o nome do produto">
   </div>
 </div>
 <hr>
@@ -16,7 +16,7 @@
           {{produto.title | uppercase}}</h5>
           <app-star [rating]="produto.rating.rate"></app-star>
         <div class="d-flex justify-content-between">
-          <h4>R${{ produto.price }}</h4>
+          <h4>${{ produto.price }}</h4>
           <a [routerLink]="['/produtos/info', produto.id]" class="btn btn-outline-primary mr-2">DETALHES</a> 
         </div>
       </div>

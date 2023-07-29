@@ -21,17 +21,9 @@ export class ProdutoService {
         return this.httpClient.get<Produto>(`${this.produtosUrl}/${id}`);
     }
 
-    save(produto: Produto): Observable<Produto> { 
-        if(produto.id) { 
-            return this.httpClient.put<Produto>(`${this.produtosUrl}/${produto.id}`, produto);
-        } else { 
-            return this.httpClient.post<Produto>(`${this.produtosUrl}`, produto);
-        }
-    }
+    
 
-    deleteById(id: number): Observable<any> {
-        return this.httpClient.delete<any>(`${this.produtosUrl}/${id}`);
-    }
+    
 
 }
 

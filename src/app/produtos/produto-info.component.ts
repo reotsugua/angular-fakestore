@@ -30,11 +30,6 @@ export class ProdutoInfoComponent implements OnInit {
       
   }
 
-  save(): void {
-    this.produtoService.save(this.produto).subscribe({
-        next: produto => console.log('Saved with success', produto),
-        error: err => console.log('Error', err)
-    });
-}
+  
 
 }

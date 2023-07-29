@@ -5,6 +5,7 @@ import { ProdutoListComponent } from './produto-list.component';
 import { ProdutoInfoComponent } from './produto-info.component';
 import { StarModule } from '../shared/component/star/star.module';
 import { AppPipeModule } from '../shared/pipe/app-pipe.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -14,6 +15,7 @@ import { AppPipeModule } from '../shared/pipe/app-pipe.module';
     ProdutoInfoComponent
   ],
   imports: [
+    FormsModule,
     CommonModule,
     StarModule,
     AppPipeModule,
