@@ -12,7 +12,8 @@ import { Error404Component } from './component/error-404/error-404.component';
         RouterModule
     ],
     exports: [
-        NavBarComponent
+        NavBarComponent,
+        Error404Component
     ]
 })
 export class CoreModule { 
