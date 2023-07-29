@@ -11,7 +11,7 @@ export class ProdutoListComponent implements OnInit {
 
     _produtos: Produto[] = [];
     
-    _filterBy: string;
+    _filterBy!: string;
 
     constructor(private produtoService: ProdutoService) { }
 

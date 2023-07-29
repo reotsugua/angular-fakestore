@@ -16,18 +16,14 @@ import { Error404Component } from './core/component/error-404/error-404.componen
     Error404Component
   ],
   imports: [
+    CoreModule,
+    ProdutoModule,
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {
-        path: '', redirectTo: 'produtos', pathMatch: 'full'
-      }, 
-      {
-        path: '**', component: Error404Component
-      }
-    ]),
-    ProdutoModule,
-    CoreModule
+      {path: '', redirectTo: 'produtos', pathMatch: 'full'}, 
+      {path: '**', component: Error404Component}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
