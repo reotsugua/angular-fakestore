@@ -9,10 +9,8 @@ import { ProdutoService } from './produto.service';
 export class ProdutoInfoComponent implements OnInit {
 
   produto!: Produto;
-    
 
-  
-  constructor(private activatedRoute: ActivatedRoute, private produtoservice: ProdutoService, private router: Router) {}
+  constructor(private activatedRoute: ActivatedRoute, private produtoService: ProdutoService) { }
 
 
   ngOnInit(): void {
@@ -20,7 +18,7 @@ export class ProdutoInfoComponent implements OnInit {
       const numericId = id ? parseInt(id, 10) : null; // ou Number(id)
 
       if (numericId !== null) {
-          this.produtoservice.retrieveById(numericId).subscribe({
+          this.produtoService.retrieveById(numericId).subscribe({
           next: produto => this.produto = produto,
           error: err => console.log('Error', err)
           });
@@ -33,14 +31,10 @@ export class ProdutoInfoComponent implements OnInit {
   }
 
   save(): void {
-         this.produtoservice.save(this.produto).subscribe({
-          next: produto => {
-                     console.log('Updated with success', produto);
-                      this.router.navigate(['/produtos']);
-                   },
-                    error: err => console.log('Error', err)
-            
-       });
-     }
+    this.produtoService.save(this.produto).subscribe({
+        next: produto => console.log('Saved with success', produto),
+        error: err => console.log('Error', err)
+    });
+}
 
 }
